@@ -202,6 +202,43 @@
     </video>
 </div>
 <p><img src="/img/Potenciometro.PNG" alt="Imagen Simple"></p>
+<h1 id="led-rgb">LED RGB</h1>
+<ul>
+<li>3 Resistores de 330 Ohms</li>
+<li>1 Placa Arduino</li>
+<li>1 LED RGB</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/RGB.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>const int RED_PIN = 9;
+const int GREEN_PIN = 10;
+const int BLUE_PIN = 11;</p>
+<p>int DISPLAY_TIME = 100;
+void setup() {
+pinMode(RED_PIN, OUTPUT);
+pinMode(GREEN_PIN, OUTPUT);
+pinMode(BLUE_PIN, OUTPUT);
+}</p>
+<p>void loop() {
+digitalWrite(RED_PIN, HIGH);
+digitalWrite(GREEN_PIN, LOW);
+digitalWrite(BLUE_PIN, LOW);
+delay(1000);</p>
+<p>digitalWrite(RED_PIN, LOW);
+digitalWrite(GREEN_PIN, HIGH);
+digitalWrite(BLUE_PIN, LOW);
+delay(1000);</p>
+<p>digitalWrite(RED_PIN, LOW);
+digitalWrite(GREEN_PIN, LOW);
+digitalWrite(BLUE_PIN, HIGH);
+delay(1000);
+}</p>
 <h1 id="multiples-leds">Multiples LEDS</h1>
 <ul>
 <li>8 Resistencias de 330 Ohms</li>
@@ -233,6 +270,167 @@
     </video>
 </div>
 <p><img src="/img/LED_LDR.PNG" alt="Imagen Simple"></p>
+<h1 id="rgb--potenciometro">RGB + Potenciometro</h1>
+<ul>
+<li>3 Resistores de 330 Ohms</li>
+<li>1 Placa de Arduino</li>
+<li>1 Potenciometro</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/RGB8.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>int azul=10;
+int verde=9;
+int rojo=8;
+int valor;</p>
+<p>void setup()
+{
+pinMode(verde,OUTPUT);
+pinMode(azul,OUTPUT);
+pinMode(rojo,OUTPUT);
+Serial.begin(9600);
+}</p>
+<p>void loop()
+{
+valor = map (analogRead(A5),0,1023,0,70);</p>
+<p>if ((valor&gt;0) and (valor&lt;=10))
+{
+digitalWrite(verde,HIGH);
+digitalWrite(azul,LOW);
+digitalWrite(rojo,LOW);
+Serial.print(&ldquo;Verde:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;10) and (valor&lt;=20))
+{
+digitalWrite(verde,LOW);
+digitalWrite(azul,HIGH);
+digitalWrite(rojo,LOW);
+Serial.print(&ldquo;Azul:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;20) and (valor&lt;=30))
+{
+digitalWrite(verde,LOW);
+digitalWrite(azul,LOW);
+digitalWrite(rojo,HIGH);
+Serial.print(&ldquo;Rojo:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;30) and (valor&lt;=40))
+{
+digitalWrite(verde,HIGH);
+digitalWrite(azul,HIGH);
+digitalWrite(rojo,LOW);
+Serial.print(&ldquo;Cian:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;40) and (valor&lt;=50))
+{
+digitalWrite(verde,HIGH);
+digitalWrite(azul,LOW);
+digitalWrite(rojo,HIGH);
+Serial.print(&ldquo;Amarillo:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;50) and (valor&lt;=60))
+{
+digitalWrite(verde,LOW);
+digitalWrite(azul,HIGH);
+digitalWrite(rojo,HIGH);
+Serial.print(&ldquo;Magenta:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>if ((valor&gt;60) and (valor&lt;=70))
+{
+digitalWrite(verde,HIGH);
+digitalWrite(azul,HIGH);
+digitalWrite(rojo,HIGH);
+Serial.print(&ldquo;Blanco:&quot;);
+Serial.println(valor);
+delay(500);
+}</p>
+<p>}</p>
+<h1 id="knight-rider">Knight Rider</h1>
+<ul>
+<li>6 LEDS</li>
+<li>6 Resistores de 330 Ohms</li>
+<li>1 Placa Arduino</li>
+</ul>
+<div>
+    <video 
+    width="100%" 
+    height="450" 
+    autoplay muted loop controls preload>
+    <source src="/img/KR.mp4"  type="video/mp4">
+    </video>
+</div>
+<p>int ledPins [] = {8,9,10,11,12,13};</p>
+<p>void setup() {
+pinMode (8, OUTPUT);
+pinMode (9, OUTPUT);
+pinMode (10, OUTPUT);
+pinMode (11, OUTPUT);
+pinMode (12, OUTPUT);
+pinMode (13, OUTPUT);
+}</p>
+<p>void loop() {
+digitalWrite (8, HIGH);
+delay(50);
+digitalWrite (8, LOW);
+delay(50);</p>
+<p>digitalWrite (9, HIGH);
+delay(50);
+digitalWrite (9, LOW);
+delay(50);</p>
+<p>digitalWrite (10, HIGH);
+delay(50);
+digitalWrite (10, LOW);
+delay(50);</p>
+<p>digitalWrite (11, HIGH);
+delay(50);
+digitalWrite (11, LOW);
+delay(50);</p>
+<p>digitalWrite (12, HIGH);
+delay(50);
+digitalWrite (12, LOW);
+delay(50);</p>
+<p>digitalWrite (13, HIGH);
+delay(50);
+digitalWrite (13, LOW);
+delay(50);</p>
+<p>digitalWrite (12, HIGH);
+delay(50);
+digitalWrite (12, LOW);
+delay(50);</p>
+<p>digitalWrite (11, HIGH);
+delay(50);
+digitalWrite (11, LOW);
+delay(50);</p>
+<p>digitalWrite (10, HIGH);
+delay(50);
+digitalWrite (10, LOW);
+delay(50);</p>
+<p>digitalWrite (9, HIGH);
+delay(50);
+digitalWrite (9, LOW);
+delay(50);</p>
+<p>digitalWrite (8, HIGH);
+delay(50);
+digitalWrite (8, LOW);
+delay(50);
+}</p>
 
 </div>
 </div>
